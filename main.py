@@ -38,7 +38,6 @@ def save_data():
     try:
         os.replace(tmp_file, DATA_FILE)
     except Exception:
-        # Best-effort replace; if it fails, attempt a normal write as fallback
         with open(DATA_FILE, "w") as f:
             json.dump({
                 "students": students_database,
